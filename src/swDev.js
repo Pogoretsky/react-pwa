@@ -1,9 +1,8 @@
-export default function swDev()
-{
+export default function swDev() {
   function determineAppServerKey() {
     const vapidPublicKey =
-    "BJthRQ5myDgc7OSXzPCMftGw-n16F7zQBEN7EUD6XxcfTTvrLGWSIG7y_JxiWtVlCFua0S8MTB5rPziBqNx1qIo";
-      return urlBase64ToUint8Array(vapidPublicKey);
+      "BMdyHPkeqaCC32QYch8rVkuUgzrnfI6UVyWxfJ4wlpZUpa5lSx2alF9nPZ8e1t6lq9lSFryFw-gagd7OSAyfpJA";
+    return urlBase64ToUint8Array(vapidPublicKey);
   }
 
   function urlBase64ToUint8Array(base64String) {
@@ -20,20 +19,20 @@ export default function swDev()
     }
     return outputArray;
   }
-  
-    let swUrl=  `${process.env.PUBLIC_URL}/sw.js`
-    navigator.serviceWorker.register(swUrl).then((response)=>{
-        console.warn("response",response)
 
-        return response.pushManager.getSubscription()
-        .then(function (subscription) {
-           response.pushManager.subscribe({
-            userVisibleOnly: true,
-            applicationServerKey: determineAppServerKey()
-          })
-          
+  let swUrl = `${process.env.PUBLIC_URL}/sw.js`
+  navigator.serviceWorker.register(swUrl).then((response) => {
+    console.warn("response", response)
 
+    return response.pushManager.getSubscription()
+      .then(function (subscription) {
+        response.pushManager.subscribe({
+          userVisibleOnly: true,
+          applicationServerKey: determineAppServerKey()
         })
 
-    }) 
+
+      })
+
+  })
 }
