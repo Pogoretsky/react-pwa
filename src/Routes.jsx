@@ -1,19 +1,10 @@
-import React, {useEffect} from "react"
-import {Route, Switch, useLocation} from "react-router-dom"
+import React from "react"
+import {Route, Switch} from "react-router-dom"
 import Feed from "./Feed";
 import Events from "./Events";
 import Home from "./Home";
 
 const Routes = () => {
-  const location = useLocation()
-
-  useEffect(() => {
-    const pathName = location.pathname
-    // this.registration.showNotification("Navigation", {
-    //   body: `Navigated to ${pathName}`,
-    // })
-  },[location])
-
   return (
     <>
       <Switch>

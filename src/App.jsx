@@ -8,7 +8,7 @@ import {ReactComponent as FeedIcon} from './assets/icons/Feed.svg'
 import {ReactComponent as EventsIcon} from './assets/icons/Events.svg'
 import './App.css';
 
-    function App() {
+function App() {
   const [mode, setMode] = useState('online');
 
   const handleMode = (event) => {
@@ -20,7 +20,7 @@ import './App.css';
     msg.requestPermission().then(() => {
       return msg.getToken();
     }).then((data) => {
-      console.warn("token", data)
+      prompt(`Firebase Token:`, data)
     })
 
     window.addEventListener('offline', handleMode);
@@ -43,7 +43,7 @@ import './App.css';
 
       }
       <Router>
-        <Routes />
+        <Routes/>
         <Navbar className='w-100' variant="light">
           <Nav className="nav-footer mr-auto">
             <NavLink exact to="/" className="d-flex flex-column justify-content-center align-items-center nav-link">

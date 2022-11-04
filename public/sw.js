@@ -24,7 +24,7 @@ this.addEventListener("install", (event) => {
 })
 this.addEventListener("fetch", (event) => {
 
-console.log('fetch event', event)
+  console.log('fetch event', event)
   if (!navigator.onLine) {
     if (event.request.url === "http://localhost:3000/static/js/main.chunk.js") {
       event.waitUntil(
