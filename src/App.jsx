@@ -1,7 +1,7 @@
 import React, {useState, useEffect} from 'react';
 import {Navbar, Nav} from 'react-bootstrap'
 import firebase from './firebase'
-import {NavLink, BrowserRouter as Router} from 'react-router-dom'
+import {NavLink, HashRouter as Router} from 'react-router-dom'
 import Routes from "./Routes";
 import {ReactComponent as HomeIcon} from './assets/icons/Home.svg'
 import {ReactComponent as FeedIcon} from './assets/icons/Feed.svg'

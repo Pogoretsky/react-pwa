@@ -10,12 +10,14 @@ this.addEventListener("install", (event) => {
         '/bootstrap.min.css',
         '/index.html',
         '/',
-        "/users"
+        "/feed",
+        "/events"
       ])
     })
   )
 
   const triggerNotification = () => {
+    console.log('triggerNotification STARTED')
     this.registration.showNotification(lorem(2), {
       body: lorem(10),
     })
