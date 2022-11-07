@@ -1,6 +1,8 @@
 {
   "short_name": "LDH Test App",
   "name": "LDH Test App",
+  "start_url": "./",
+  "scope": ".",
   "icons": [
     {
       "src": "favicon.ico",
@@ -13,7 +15,6 @@
       "sizes": "192x192"
     }
   ],
-  "start_url": ".",
   "display": "standalone",
   "theme_color": "#000000",
   "background_color": "#ffffff"
