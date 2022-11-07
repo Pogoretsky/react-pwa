@@ -17,9 +17,11 @@ this.addEventListener("install", (event) => {
   )
 
   const triggerNotification = () => {
-    console.log('triggerNotification STARTED')
+    console.log('triggerNotification STARTED', String(Math.floor((Math.random() * 1000000) + 1)))
     this.registration.showNotification(lorem(2), {
       body: lorem(10),
+      type: 'basic',
+      tag: String(Math.floor((Math.random() * 1000000) + 1))
     })
   }
   const timerId = setInterval(triggerNotification, 30000)
